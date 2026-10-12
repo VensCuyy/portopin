@@ -1,0 +1,1552 @@
+<!doctype html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Akhmad Davin Aditya Pratama - Website Portfolio</title>
+        <!-- FontAwesome CDN -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <!-- Google Fonts -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <canvas id="cyber-canvas"></canvas>
+
+        <header>
+            <div class="container">
+                <div class="header-content">
+                    <!-- Logo Header -->
+                    <a
+                        href="#home"
+                        onclick="switchPage('home')"
+                        class="logo-box"
+                    >
+                        <div class="logo-icon">
+                            <!-- Logo SVG Vector TITL (Transparan Tanpa Background Putih) -->
+                            <svg
+                                id="header-logo-svg"
+                                viewBox="0 0 200 200"
+                                xmlns="http://www.w3.org/2000/svg"
+                                style="
+                                    width: 100%;
+                                    height: 100%;
+                                    display: block;
+                                "
+                            >
+                                <!-- Lingkaran Hijau Dasar -->
+                                <circle
+                                    cx="100"
+                                    cy="100"
+                                    r="92"
+                                    fill="#0a9244"
+                                    stroke="#000000"
+                                    stroke-width="4"
+                                />
+
+                                <!-- Panah Kuning Melengkung 1 (Atas) -->
+                                <path
+                                    d="M 72,28 C 88,18 112,18 128,28"
+                                    fill="none"
+                                    stroke="#facc15"
+                                    stroke-width="10"
+                                    stroke-linecap="round"
+                                />
+                                <polygon
+                                    points="134,34 122,20 134,16"
+                                    fill="#facc15"
+                                    stroke="#000"
+                                    stroke-width="1"
+                                />
+
+                                <!-- Panah Kuning Melengkung 2 (Kanan Bawah) -->
+                                <path
+                                    d="M 172,112 C 168,138 148,162 132,170"
+                                    fill="none"
+                                    stroke="#facc15"
+                                    stroke-width="10"
+                                    stroke-linecap="round"
+                                />
+                                <polygon
+                                    points="124,172 136,158 142,170"
+                                    fill="#facc15"
+                                    stroke="#000"
+                                    stroke-width="1"
+                                />
+
+                                <!-- Panah Kuning Melengkung 3 (Kiri Bawah) -->
+                                <path
+                                    d="M 28,125 C 32,95 50,70 68,60"
+                                    fill="none"
+                                    stroke="#facc15"
+                                    stroke-width="10"
+                                    stroke-linecap="round"
+                                />
+                                <polygon
+                                    points="26,134 22,120 34,122"
+                                    fill="#facc15"
+                                    stroke="#000"
+                                    stroke-width="1"
+                                />
+
+                                <!-- Segitiga Kuning Terbalik -->
+                                <polygon
+                                    points="36,58 164,58 100,172"
+                                    fill="#2eb85c"
+                                    stroke="#facc15"
+                                    stroke-width="10"
+                                    stroke-linejoin="round"
+                                />
+
+                                <!-- Petir Merah di Tengah -->
+                                <polygon
+                                    points="118,32 82,102 104,102 72,176 122,92 98,92"
+                                    fill="#ef4444"
+                                    stroke="#000000"
+                                    stroke-width="3"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </div>
+                        <div class="logo-text">
+                            <h2>
+                                DAVIN
+                                <span class="title-highlight">X TITL 3</span>
+                                <span class="badge-online">ONLINE</span>
+                            </h2>
+                            <p>SYSTEM INITIALIZED // KELISTRIKAN & ROBOTICS</p>
+                        </div>
+                    </a>
+
+                    <!-- Desktop Navigation Links -->
+                    <nav class="nav-desktop">
+                        <button
+                            onclick="switchPage('home')"
+                            id="nav-home"
+                            class="nav-btn active"
+                        >
+                            Utama
+                        </button>
+                        <button
+                            onclick="switchPage('biodata')"
+                            id="nav-biodata"
+                            class="nav-btn"
+                        >
+                            Biodata & CV
+                        </button>
+                        <button
+                            onclick="switchPage('project')"
+                            id="nav-project"
+                            class="nav-btn"
+                        >
+                            Museum Project
+                        </button>
+                        <button
+                            onclick="switchPage('ai')"
+                            id="nav-ai"
+                            class="nav-btn"
+                        >
+                            🤖 AI Assistant
+                        </button>
+                        <button
+                            onclick="switchPage('contact')"
+                            id="nav-contact"
+                            class="nav-btn"
+                        >
+                            Pesan
+                        </button>
+                    </nav>
+
+                    <!-- Mobile Menu Button -->
+                    <button class="mobile-btn" onclick="toggleMobileMenu()">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Dropdown -->
+            <div id="mobile-menu" class="mobile-menu">
+                <button
+                    onclick="
+                        switchPage('home');
+                        toggleMobileMenu();
+                    "
+                >
+                    🏠 Utama
+                </button>
+                <button
+                    onclick="
+                        switchPage('biodata');
+                        toggleMobileMenu();
+                    "
+                >
+                    📄 Biodata & CV
+                </button>
+                <button
+                    onclick="
+                        switchPage('project');
+                        toggleMobileMenu();
+                    "
+                >
+                    ⚙️ Museum Project
+                </button>
+                <button
+                    onclick="
+                        switchPage('ai');
+                        toggleMobileMenu();
+                    "
+                >
+                    🤖 AI Assistant
+                </button>
+                <button
+                    onclick="
+                        switchPage('contact');
+                        toggleMobileMenu();
+                    "
+                >
+                    ✉️ Pesan untuk Pembuat Website
+                </button>
+            </div>
+        </header>
+
+        <main class="container">
+            <!-- ================= PAGE 1: UTAMA / HOME ================= -->
+            <section id="page-home" class="page-section">
+                <div class="hero-grid">
+                    <!-- Left Hero Column -->
+                    <div class="hero-left">
+                        <h1>
+                            Halo, Saya<br /><span class="neon-text"
+                                >Akhmad Davin Aditya Pratama</span
+                            >
+                        </h1>
+                        <p class="hero-desc">
+                            Siswa Kelas
+                            <strong style="color: var(--neon-green)"
+                                >X Teknik Instalasi Tenaga Listrik (TITL)
+                                3</strong
+                            >
+                            yang berfokus pada dunia
+                            <strong style="color: var(--neon-green)"
+                                >Robotics, IoT, Mikrokontroler</strong
+                            >, serta pemodelan
+                            <strong style="color: var(--neon-green)"
+                                >Web Development Modern</strong
+                            >.
+                        </p>
+
+                        <div class="hero-chips">
+                            <div class="chip-item">
+                                <span class="chip-label">FOKUS BELAJAR:</span>
+                                <span class="chip-val"
+                                    >INSTALASI, ELEKTRONIKA, PROGRAM PLC,
+                                    PROGRAM ROBOT, PROGRAM WEBSITE</span
+                                >
+                            </div>
+                            <div class="chip-item">
+                                <span class="chip-label">JURUSAN:</span>
+                                <span
+                                    class="chip-val"
+                                    style="color: var(--neon-green)"
+                                    >Teknik Instalasi Tenaga Listrik
+                                    (TITL)</span
+                                >
+                            </div>
+                            <div class="chip-item" style="grid-column: span 2">
+                                <span class="chip-label">LOCATION:</span>
+                                <span class="chip-val"
+                                    >Indonesia 🇮🇩, Jawa Timur, Mojokerto</span
+                                >
+                            </div>
+                        </div>
+
+                        <div class="hero-buttons">
+                            <button
+                                onclick="switchPage('project')"
+                                class="btn-primary"
+                            >
+                                <i class="fa-solid fa-shapes"></i>
+                                <span>Museum Karya</span>
+                            </button>
+                            <button
+                                onclick="switchPage('ai')"
+                                class="btn-primary"
+                            >
+                                <i class="fa-solid fa-book-open"></i>
+                                <span>PinAI</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Center Hero Column: Physics Rig ID Badge -->
+                    <div class="hero-right">
+                        <div class="drag-label">
+                            <i
+                                class="fa-solid fa-hand-pointer"
+                                style="color: var(--neon-green)"
+                            ></i>
+                            <span>AYUNKAN / DRAG ID CARD</span>
+                        </div>
+
+                        <div class="physics-rig-container">
+                            <div class="anchor-ring">
+                                <div class="anchor-dot"></div>
+                            </div>
+
+                            <div id="lanyard-strap"></div>
+
+                            <div id="id-card" class="interactive-id-card">
+                                <div class="id-badge-box">
+                                    <div class="id-header">
+                                        <span>OFFICIAL ID BADGE</span>
+                                        <span
+                                            style="
+                                                color: var(--neon-green);
+                                                font-size: 0.8rem;
+                                            "
+                                            >● ONLINE</span
+                                        >
+                                    </div>
+
+                                    <div class="id-photo-frame">
+                                        <img
+                                            id="id-card-photo"
+                                            src="foto-id-card.jpg"
+                                            alt="Foto Akhmad Davin Aditya Pratama"
+                                            onerror="
+                                                this.onerror = null;
+                                                this.src =
+                                                    getSvgAvatar(
+                                                        'Akhmad Davin'
+                                                    );
+                                            "
+                                        />
+                                        <div class="id-photo-tag">X TITL 3</div>
+                                    </div>
+
+                                    <div class="id-info-body">
+                                        <h3>AKHMAD DAVIN A. P.</h3>
+                                        <p>Elektronika & Web Developer</p>
+
+                                        <div class="id-details-table">
+                                            <div class="id-row">
+                                                <span>Umur:</span>
+                                                <span>16 TAHUN</span>
+                                            </div>
+                                            <div class="id-row">
+                                                <span>Hobi</span>
+                                                <span
+                                                    >Coding, IoT,
+                                                    Elektronika</span
+                                                >
+                                            </div>
+                                            <div
+                                                class="id-row"
+                                                style="
+                                                    border-top: 1px solid
+                                                        var(--border-color);
+                                                    padding-top: 0.2rem;
+                                                "
+                                            >
+                                                <span>STATUS:</span>
+                                                <span
+                                                    style="
+                                                        color: var(
+                                                            --neon-green
+                                                        );
+                                                    "
+                                                    >Siswa SMKN 1 PUNGGING</span
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            style="
+                                display: flex;
+                                gap: 0.5rem;
+                                margin-top: 0.5rem;
+                            "
+                        >
+                            <button onclick="shakeCard()" class="btn-sm-neon">
+                                <i class="fa-solid fa-arrows-spin"></i> Ayunkan
+                                Badge
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Right Hero Column: Tech Stack Section -->
+                    <div class="hero-tech">
+                        <div class="section-header">
+                            <span class="section-tag">Spesialisasi</span>
+                            <h2 class="section-title" style="font-size: 1.4rem">
+                                Teknologi & Hardware
+                            </h2>
+                            <p class="section-desc" style="font-size: 0.8rem">
+                                mikrokontroler, TITL, dan pemrograman.
+                            </p>
+                        </div>
+
+                        <div class="tech-grid">
+                            <div class="tech-card">
+                                <div class="tech-icon">
+                                    <i class="fa-solid fa-microchip"></i>
+                                </div>
+                                <h4>Arduino C++</h4>
+                                <span>Mikrokontroler</span>
+                                <span>Program Robotik</span>
+                            </div>
+                            <div class="tech-card">
+                                <div class="tech-icon">
+                                    <i
+                                        class="fa-solid fa-bolt"
+                                        style="color: #facc15"
+                                    ></i>
+                                </div>
+                                <h4>TITL</h4>
+                                <span>Belajar Instalasi Listrik</span>
+                            </div>
+                            <div class="tech-card">
+                                <div class="tech-icon">
+                                    <i
+                                        class="fa-brands fa-js"
+                                        style="color: #f7df1e"
+                                    ></i>
+                                </div>
+                                <h4>JavaScript</h4>
+                                <span>Web & IoT UI</span>
+                            </div>
+                            <div class="tech-card">
+                                <div class="tech-icon">
+                                    <i
+                                        class="fa-brands fa-python"
+                                        style="color: #38bdf8"
+                                    ></i>
+                                </div>
+                                <h4>Python</h4>
+                                <span>Scripting & Robotics</span>
+                            </div>
+                            <div class="tech-card">
+                                <div class="tech-icon">
+                                    <i
+                                        class="fa-brands fa-html5"
+                                        style="color: #f97316"
+                                    ></i>
+                                </div>
+                                <h4>HTML / CSS</h4>
+                                <span>Web Layout</span>
+                            </div>
+                            <div class="tech-card">
+                                <div class="tech-icon">
+                                    <i class="fa-solid fa-wifi"></i>
+                                </div>
+                                <h4>ESP32 & ARDUINO</h4>
+                                <span>Komponen Robotik</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media Table -->
+                <div>
+                    <div class="section-header">
+                        <span class="section-tag">Koneksi</span>
+                        <h2 class="section-title">Direktori Sosial Media</h2>
+                    </div>
+
+                    <div class="table-box" style="margin-top: 1.5rem">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Platform</th>
+                                    <th>Username</th>
+                                    <th>Nama App</th>
+                                    <th style="text-align: right">Tautan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <strong
+                                            ><i
+                                                class="fa-brands fa-instagram"
+                                                style="color: #ec4899"
+                                            ></i
+                                        ></strong>
+                                    </td>
+                                    <td style="font-family: var(--font-mono)">
+                                        @vqw_xrry
+                                    </td>
+                                    <td>Instagram</td>
+                                    <td style="text-align: right">
+                                        <a
+                                            href="https://www.instagram.com/vqw_xrry?cplk=cnljODlrMG1wY3E0"
+                                            target="_blank"
+                                            class="btn-sm-neon"
+                                            style="text-decoration: none"
+                                            >Kunjungi ↗</a
+                                        >
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong
+                                            ><i class="fa-brands fa-tiktok"></i
+                                        ></strong>
+                                    </td>
+                                    <td style="font-family: var(--font-mono)">
+                                        @vqw_xrry
+                                    </td>
+                                    <td>Tiktok</td>
+                                    <td style="text-align: right">
+                                        <a
+                                            href="https://www.tiktok.com/@vqw_xrry"
+                                            target="_blank"
+                                            class="btn-sm-neon"
+                                            style="text-decoration: none"
+                                            >Kunjungi ↗</a
+                                        >
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong
+                                            ><i class="fa-brands fa-github"></i
+                                        ></strong>
+                                    </td>
+                                    <td style="font-family: var(--font-mono)">
+                                        @VensCuyy
+                                    </td>
+                                    <td>Github</td>
+                                    <td style="text-align: right">
+                                        <a
+                                            href="https://github.com/VensCuyy"
+                                            target="_blank"
+                                            class="btn-sm-neon"
+                                            style="text-decoration: none"
+                                            >Kunjungi ↗</a
+                                        >
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= PAGE 2: BIODATA & CV ================= -->
+            <section id="page-biodata" class="page-section hidden">
+                <div class="section-header">
+                    <span class="section-tag">Profil & Riwayat</span>
+                    <h2 class="section-title">Biodata & CV Akhmad Davin</h2>
+                </div>
+
+                <div
+                    style="
+                        display: grid;
+                        grid-template-columns: repeat(
+                            auto-fit,
+                            minmax(300px, 1fr)
+                        );
+                        gap: 1.5rem;
+                    "
+                >
+                    <!-- Pendidikan -->
+                    <div class="project-card">
+                        <button
+                            onclick="openProjectDetail('cv.png', false, '9-16')"
+                            class="btn-secondary"
+                        >
+                            <i class="fa-solid fa-book-open"></i>
+                            <span>Lihat CV</span>
+                        </button>
+                    </div>
+                    <div class="project-card">
+                        <button
+                            onclick="
+                                openProjectDetail(
+                                    '',
+                                    '',
+                                    'biodata.png',
+                                    false,
+                                    '9-16'
+                                )
+                            "
+                            class="btn-secondary"
+                        >
+                            <i class="fa-solid fa-book-open"></i>
+                            <span>Lihat BioData</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= PAGE 3: MUSEUM PROJECT ================= -->
+            <section id="page-project" class="page-section hidden">
+                <div class="section-header">
+                    <span class="section-tag">Portofolio Karya</span>
+                    <h2 class="section-title">Museum Project Davin</h2>
+                    <p class="section-desc">
+                        Kumpulan prototipe mikrokontroler, instalasi listrik,
+                        dan Website.
+                    </p>
+
+                    <div class="project-filter-bar">
+                        <button
+                            id="filter-all"
+                            onclick="filterProjects('all')"
+                            class="filter-btn active"
+                        >
+                            Semua Karya
+                        </button>
+                        <button
+                            id="filter-robotik"
+                            onclick="filterProjects('robotik')"
+                            class="filter-btn"
+                        >
+                            ⚡ Robotik & IoT
+                        </button>
+                        <button
+                            id="filter-website"
+                            onclick="filterProjects('website')"
+                            class="filter-btn"
+                        >
+                            💻 Website & App
+                        </button>
+                        <!-- Modal Tambah Project -->
+                        <button
+                            onclick="openAddProjectModal()"
+                            class="btn-sm-neon"
+                            style="padding: 0.5rem 1rem"
+                        >
+                            + Tambah Project
+                        </button>
+                    </div>
+                </div>
+
+                <div id="project-grid" class="project-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card" data-category="robotik">
+                        <div class="project-media">
+                            <img
+                                src="siram.jpg"
+                                alt="Penyiram Tanaman otomatis"
+                                class="project-img"
+                                onerror="
+                                    this.onerror = null;
+                                    this.src = getSvgCover(
+                                        'Penyiram Otomatis',
+                                        'IoT Soil Sensor'
+                                    );
+                                "
+                            />
+                            <span class="project-tag-badge">Robotik & IoT</span>
+                        </div>
+
+                        <div class="project-info">
+                            <h3>Penyiram Tanaman Otomatis</h3>
+                            <p>
+                                Sistem Penyiraman Tanaman Otomatis: Sistem
+                                penyiraman presisi yang bekerja secara otomatis
+                                berdasarkan pembacaan tingkat kelembaban tanah.
+                            </p>
+                        </div>
+
+                        <div class="project-footer">
+                            <span
+                                style="
+                                    font-size: 0.7rem;
+                                    font-family: var(--font-mono);
+                                    color: var(--neon-green);
+                                "
+                                >Arduino Nano & Soil Moisture</span
+                            >
+                            <button
+                                onclick="
+                                    openProjectDetail(
+                                        'Penyiram Tanaman Otomatis',
+                                        'Sistem penyiraman presisi otomatis berdasarkan kelembaban tanah dengan sensor soil moisture dan sakelar relay pump.',
+                                        'https://files.catbox.moe/ouu7sn.mp4',
+                                        true,
+                                        '9-16'
+                                    )
+                                "
+                                class="btn-sm-neon"
+                            >
+                                Detail
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card" data-category="robotik">
+                        <div class="project-media">
+                            <img
+                                src="car.jpg"
+                                alt="REMOTE CONTROL CAR KENDALI VIA HP"
+                                class="project-img"
+                                onerror="
+                                    this.onerror = null;
+                                    this.src = getSvgCover(
+                                        'RC Car Bluetooth',
+                                        'Arduino Drive'
+                                    );
+                                "
+                            />
+                            <span class="project-tag-badge">Robotik & IoT</span>
+                        </div>
+
+                        <div class="project-info">
+                            <h3>Remote Control Car (Kendali HP)</h3>
+                            <p>
+                                Mobil Kendali Jarak Jauh via Ponsel Pintar:
+                                Kendaraan cerdas yang dikontrol secara nirkabel
+                                melalui aplikasi Bluetooth pada smartphone.
+                            </p>
+                        </div>
+
+                        <div class="project-footer">
+                            <span
+                                style="
+                                    font-size: 0.7rem;
+                                    font-family: var(--font-mono);
+                                    color: var(--neon-green);
+                                "
+                                >Arduino Nano & Motor Driver</span
+                            >
+                            <button
+                                onclick="
+                                    openProjectDetail(
+                                        'Remote Control Car (Kendali HP)',
+                                        'Mobil kendali jarak jauh via Bluetooth HC-05 dan aplikasi Android dengan kontrol kecepatan PWM.',
+                                        'https://files.catbox.moe/g4delo.mp4',
+                                        true,
+                                        '16-9'
+                                    )
+                                "
+                                class="btn-sm-neon"
+                            >
+                                Detail
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card" data-category="robotik">
+                        <div class="project-media">
+                            <img
+                                src="tong.jpg"
+                                alt="Tong sampah buka tutup otomatis"
+                                class="project-img"
+                                onerror="
+                                    this.onerror = null;
+                                    this.src = getSvgCover(
+                                        'Tong Sampah Otomatis',
+                                        'Ultrasonic Servo'
+                                    );
+                                "
+                            />
+                            <span class="project-tag-badge">Robotik & IoT</span>
+                        </div>
+
+                        <div class="project-info">
+                            <h3>Tempat Sampah Buka/Tutup Otomatis</h3>
+                            <p>
+                                Tempat Sampah Otomatis Tanpa Sentuh: Tempat
+                                sampah higienis dengan mekanisme buka-tutup
+                                otomatis memanfaatkan sensor jarak dan penggerak
+                                servo.
+                            </p>
+                        </div>
+
+                        <div class="project-footer">
+                            <span
+                                style="
+                                    font-size: 0.7rem;
+                                    font-family: var(--font-mono);
+                                    color: var(--neon-green);
+                                "
+                                >Arduino Nano & Motor Servo</span
+                            >
+                            <button
+                                onclick="
+                                    openProjectDetail(
+                                        'Tempat Sampah Buka/Tutup Otomatis',
+                                        'Prototipe tempat sampah otomatis higienis yang membuka tutupnya ketika mendeteksi objek dalam jarak < 20cm.',
+                                        'https://files.catbox.moe/etippx.mp4',
+                                        true,
+                                        '9-16'
+                                    )
+                                "
+                                class="btn-sm-neon"
+                            >
+                                Detail
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card" data-category="robotik">
+                        <div class="project-media">
+                            <img
+                                src="nyala-pakai-hp.jpg"
+                                alt="Nyalakan/Matikan Lampu dengan HP"
+                                class="project-img"
+                                onerror="
+                                    this.onerror = null;
+                                    this.src = getSvgCover(
+                                        'Smart Light Switch',
+                                        'IoT Relay Control'
+                                    );
+                                "
+                            />
+                            <span class="project-tag-badge">Robotik & IoT</span>
+                        </div>
+
+                        <div class="project-info">
+                            <h3>Nyalakan/Matikan Lampu dengan HP</h3>
+                            <p>
+                                Sakelar Lampu Jarak Jauh (IoT): Sistem kontrol
+                                daya lampu yang terintegrasi dengan jaringan
+                                nirkabel untuk kendali jarak jauh via ponsel
+                                pintar.
+                            </p>
+                        </div>
+
+                        <div class="project-footer">
+                            <span
+                                style="
+                                    font-size: 0.7rem;
+                                    font-family: var(--font-mono);
+                                    color: var(--neon-green);
+                                "
+                                >Arduino Nano & Modul Bluetooth</span
+                            >
+                            <button
+                                onclick="
+                                    openProjectDetail(
+                                        'Nyalakan/Matikan Lampu dengan HP',
+                                        'Modul sakelar cerdas beban AC 220V dikendalikan dari aplikasi smartphone melalui modul relay berisolasi optocoupler.',
+                                        'https://files.catbox.moe/isbapp.mp4',
+                                        true,
+                                        '9-16'
+                                    )
+                                "
+                                class="btn-sm-neon"
+                            >
+                                Detail
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="project-card" data-category="robotik">
+                        <div class="project-media">
+                            <img
+                                src="sensor-lampu.jpg"
+                                alt="Sistem Pencahayaan Pintar (Sensor Ultrasonik)"
+                                class="project-img"
+                                onerror="
+                                    this.onerror = null;
+                                    this.src = getSvgCover(
+                                        'Pencahayaan Ultrasonik',
+                                        'Distance Sensing'
+                                    );
+                                "
+                            />
+                            <span class="project-tag-badge">Robotik & IoT</span>
+                        </div>
+
+                        <div class="project-info">
+                            <h3>Sistem Pencahayaan Pintar (Ultrasonik)</h3>
+                            <p>
+                                Sistem Pencahayaan Pintar: Lampu otomatis yang
+                                menyala berdasarkan deteksi jarak objek di
+                                sekitarnya secara akurat.
+                            </p>
+                        </div>
+
+                        <div class="project-footer">
+                            <span
+                                style="
+                                    font-size: 0.7rem;
+                                    font-family: var(--font-mono);
+                                    color: var(--neon-green);
+                                "
+                                >Arduino Nano & HC-SR04</span
+                            >
+                            <button
+                                onclick="
+                                    openProjectDetail(
+                                        'Sistem Pencahayaan Pintar (Ultrasonik)',
+                                        'Lampu otomatis hemat energi yang mendeteksi keberadaan orang di area sekitar dengan batas threshold programmable.',
+                                        'https://files.catbox.moe/p4ulyg.mp4',
+                                        true,
+                                        '9-16'
+                                    )
+                                "
+                                class="btn-sm-neon"
+                            >
+                                Detail
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="project-card" data-category="website">
+                        <div class="project-media">
+                            <img
+                                src="web-pengatur-keuangan.jpg"
+                                alt="Finansialku - Personal Finance Dashboard"
+                                class="project-img"
+                                onerror="
+                                    this.onerror = null;
+                                    this.src = getSvgCover(
+                                        'Finansialku App',
+                                        'Google Sheets API'
+                                    );
+                                "
+                            />
+                            <span class="project-tag-badge">Website & App</span>
+                        </div>
+
+                        <div class="project-info">
+                            <h3>Finansialku - Personal Finance Dashboard</h3>
+                            <p>
+                                Web app manajemen keuangan pribadi dengan
+                                integrasi Google Sheets secara real-time. Fitur
+                                utama mencakup monitoring saldo, rekap total
+                                pemasukan dan pengeluaran.
+                            </p>
+                        </div>
+
+                        <div class="project-footer">
+                            <span
+                                style="
+                                    font-size: 0.7rem;
+                                    font-family: var(--font-mono);
+                                    color: var(--neon-green);
+                                "
+                                >HTML, CSS, JS, Apps Script</span
+                            >
+                            <div
+                                style="
+                                    display: flex;
+                                    gap: 0.4rem;
+                                    align-items: center;
+                                "
+                            >
+                                <a
+                                    href="https://venscuyy.github.io/finansialku/"
+                                    target="_blank"
+                                    class="btn-sm-neon"
+                                    style="
+                                        text-decoration: none;
+                                        display: inline-flex;
+                                        align-items: center;
+                                        gap: 0.3rem;
+                                    "
+                                >
+                                    <i
+                                        class="fa-solid fa-arrow-up-right-from-square"
+                                        style="font-size: 0.65rem"
+                                    ></i>
+                                    Kunjungi Web
+                                </a>
+                                <button
+                                    onclick="
+                                        openProjectDetail(
+                                            'Finansialku - Personal Finance Dashboard',
+                                            'Dashboard Web interaktif terhubung dengan API Google Sheets untuk rekapitulasi pengeluaran dan pemasukan harian secara realtime.',
+                                            'web-pengatur-keuangan.jpg',
+                                            false,
+                                            '16-9',
+                                            'https://venscuyy.github.io/finansialku/'
+                                        )
+                                    "
+                                    class="btn-sm-neon"
+                                >
+                                    Detail
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 7 -->
+                    <div class="project-card" data-category="website">
+                        <div class="project-media">
+                            <img
+                                src="web-kelas.jpg"
+                                alt="Class Dashboard & Portal - X TITL 3"
+                                class="project-img"
+                                onerror="
+                                    this.onerror = null;
+                                    this.src = getSvgCover(
+                                        'Portal X TITL 3',
+                                        'SMKN 1 Pungging'
+                                    );
+                                "
+                            />
+                            <span class="project-tag-badge">Website & App</span>
+                        </div>
+
+                        <div class="project-info">
+                            <h3>Class Dashboard & Portal - X TITL 3</h3>
+                            <p>
+                                Website portal interaktif yang dirancang khusus
+                                untuk pengelolaan data dan informasi kelas X
+                                TITL 3 SMK Negeri 1 Pungging.
+                            </p>
+                        </div>
+
+                        <div class="project-footer">
+                            <span
+                                style="
+                                    font-size: 0.7rem;
+                                    font-family: var(--font-mono);
+                                    color: var(--neon-green);
+                                "
+                                >HTML, CSS, JS, Apps Script</span
+                            >
+                            <div
+                                style="
+                                    display: flex;
+                                    gap: 0.4rem;
+                                    align-items: center;
+                                "
+                            >
+                                <a
+                                    href="https://venscuyy.github.io/xtitl3/"
+                                    target="_blank"
+                                    class="btn-sm-neon"
+                                    style="
+                                        text-decoration: none;
+                                        display: inline-flex;
+                                        align-items: center;
+                                        gap: 0.3rem;
+                                    "
+                                >
+                                    <i
+                                        class="fa-solid fa-arrow-up-right-from-square"
+                                        style="font-size: 0.65rem"
+                                    ></i>
+                                    Kunjungi Web
+                                </a>
+                                <button
+                                    onclick="
+                                        openProjectDetail(
+                                            'Class Dashboard & Portal - X TITL 3',
+                                            'Portal web lengkap kelas X TITL 3 memuat jadwal piket, biodata siswa, agenda kelas, dan transparansi kas kelas.',
+                                            'web-kelas.jpg',
+                                            false,
+                                            '16-9',
+                                            'https://venscuyy.github.io/xtitl3/'
+                                        )
+                                    "
+                                    class="btn-sm-neon"
+                                >
+                                    Detail
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 8 -->
+                    <div class="project-card" data-category="website">
+                        <div class="project-media">
+                            <img
+                                src="web_sholat.jpg"
+                                alt="Web Panduan Bacaan Sholat"
+                                class="project-img"
+                                onerror="
+                                    this.onerror = null;
+                                    this.src = getSvgCover(
+                                        'Panduan Bacaan Sholat',
+                                        'By Davin'
+                                    );
+                                "
+                            />
+                            <span class="project-tag-badge">Website & App</span>
+                        </div>
+
+                        <div class="project-info">
+                            <h3>Website Panduan Bacaan Sholat</h3>
+                            <p>
+                                Website Panduan untuk menbaca surat/doa sholat
+                                interaktif yang dirancang khusus untuk
+                                memperbaiki bacaan sholat.
+                            </p>
+                        </div>
+
+                        <div class="project-footer">
+                            <span
+                                style="
+                                    font-size: 0.7rem;
+                                    font-family: var(--font-mono);
+                                    color: var(--neon-green);
+                                "
+                                >HTML, CSS, JS, GitHub Pages</span
+                            >
+                            <div
+                                style="
+                                    display: flex;
+                                    gap: 0.4rem;
+                                    align-items: center;
+                                "
+                            >
+                                <a
+                                    href="https://venscuyy.github.io/allpay.github.io/"
+                                    target="_blank"
+                                    class="btn-sm-neon"
+                                    style="
+                                        text-decoration: none;
+                                        display: inline-flex;
+                                        align-items: center;
+                                        gap: 0.3rem;
+                                    "
+                                >
+                                    <i
+                                        class="fa-solid fa-arrow-up-right-from-square"
+                                        style="font-size: 0.65rem"
+                                    ></i>
+                                    Kunjungi Web
+                                </a>
+                                <button
+                                    onclick="
+                                        openProjectDetail(
+                                            'Website Panduan Bacaan Sholat',
+                                            'Website Panduan untuk menbaca surat/doa sholat interaktif yang dirancang khusus untuk memperbaiki bacaan sholat.',
+                                            'web_sholat.jpg',
+                                            false,
+                                            '16-9',
+                                            'https://venscuyy.github.io/allpay.github.io/'
+                                        )
+                                    "
+                                    class="btn-sm-neon"
+                                >
+                                    Detail
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= PAGE 4: AI ASSISTANT ================= -->
+            <section id="page-ai" class="page-section hidden">
+                <div class="section-header">
+                    <span class="section-tag">AI Assistant</span>
+                    <h2 class="section-title">Tanya PinAI</h2>
+                    <p class="section-desc">
+                        Tanyakan hal menarik seputar Elektronika, Arduino, atau
+                        Kelistrikan.
+                    </p>
+                </div>
+
+                <div class="chat-container">
+                    <div class="chat-header">
+                        <div
+                            style="
+                                display: flex;
+                                align-items: center;
+                                gap: 0.75rem;
+                            "
+                        >
+                            <i
+                                class="fa-solid fa-robot"
+                                style="
+                                    color: var(--neon-green);
+                                    font-size: 1.2rem;
+                                "
+                            ></i>
+                            <div>
+                                <h4
+                                    style="
+                                        color: white;
+                                        font-size: 0.9rem;
+                                        margin: 0;
+                                    "
+                                >
+                                    PinAI
+                                </h4>
+                                <p
+                                    style="
+                                        font-size: 0.65rem;
+                                        color: var(--neon-green);
+                                        font-family: var(--font-mono);
+                                        margin: 0;
+                                    "
+                                >
+                                    Online • Asisten AI Portofolio
+                                </p>
+                            </div>
+                        </div>
+                        <button
+                            onclick="clearChat()"
+                            class="btn-sm-neon"
+                            style="font-size: 0.7rem; padding: 4px 8px"
+                        >
+                            Reset
+                        </button>
+                    </div>
+
+                    <div id="chat-messages" class="chat-messages">
+                        <div class="chat-msg ai">
+                            <i
+                                class="fa-solid fa-robot"
+                                style="
+                                    color: var(--neon-green);
+                                    margin-top: 0.2rem;
+                                "
+                            ></i>
+                            <div class="msg-bubble">
+                                Halo! Saya PinAI, asisten AI portofolio Akhmad
+                                Davin A.P. Silakan bertanya tentang Elektronika,
+                                Robotik, atau Kelistrikan.
+                            </div>
+                        </div>
+                    </div>
+
+                    <form
+                        id="chat-form"
+                        onsubmit="handleChatSubmit(event)"
+                        class="chat-input-bar"
+                    >
+                        <input
+                            type="text"
+                            id="chat-input"
+                            placeholder="Tulis pertanyaan seputar Elektronika, atau Web Developer..."
+                            required
+                            autocomplete="off"
+                        />
+                        <button
+                            type="submit"
+                            class="btn-primary"
+                            style="padding: 0.75rem 1.25rem"
+                        >
+                            Kirim
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- ================= PAGE 5: CONTACT & PESAN ================= -->
+            <section id="page-contact" class="page-section hidden">
+                <div class="section-header">
+                    <span class="section-tag">Kontak</span>
+                    <h2 class="section-title">
+                        Kirim Pesan ke Pembuat Website
+                    </h2>
+                </div>
+
+                <div
+                    style="
+                        max-width: 600px;
+                        margin: 0 auto;
+                        background: var(--bg-card);
+                        padding: 1.5rem;
+                        border-radius: 16px;
+                        border: 1px solid var(--border-color);
+                    "
+                >
+                    <form
+                        id="contact-form"
+                        action="https://formspree.io/f/xwvgwvpj"
+                        method="POST"
+                        onsubmit="handleContactSubmit(event)"
+                        style="display: flex; flex-direction: column; gap: 1rem"
+                    >
+                        <div>
+                            <label
+                                style="
+                                    font-size: 0.75rem;
+                                    font-family: var(--font-mono);
+                                    color: var(--text-muted);
+                                "
+                                >Nama Anda</label
+                            >
+                            <input
+                                type="text"
+                                name="name"
+                                required
+                                placeholder="Nama Anda..."
+                            />
+                        </div>
+                        <div>
+                            <label
+                                style="
+                                    font-size: 0.75rem;
+                                    font-family: var(--font-mono);
+                                    color: var(--text-muted);
+                                "
+                                >Email Anda</label
+                            >
+                            <input
+                                type="email"
+                                name="email"
+                                required
+                                placeholder="nama@email.com..."
+                            />
+                        </div>
+                        <div>
+                            <label
+                                style="
+                                    font-size: 0.75rem;
+                                    font-family: var(--font-mono);
+                                    color: var(--text-muted);
+                                "
+                                >Subjek Pesan</label
+                            >
+                            <input
+                                type="text"
+                                name="subject"
+                                required
+                                placeholder="Subjek..."
+                            />
+                        </div>
+                        <div>
+                            <label
+                                style="
+                                    font-size: 0.75rem;
+                                    font-family: var(--font-mono);
+                                    color: var(--text-muted);
+                                "
+                                >Isi Pesan</label
+                            >
+                            <textarea
+                                name="message"
+                                rows="4"
+                                required
+                                placeholder="Tulis pesan Anda di sini..."
+                            ></textarea>
+                        </div>
+                        <button
+                            type="submit"
+                            id="contact-submit-btn"
+                            class="btn-primary"
+                            style="
+                                width: 100%;
+                                justify-content: center;
+                                margin-top: 0.5rem;
+                            "
+                        >
+                            <i class="fa-solid fa-paper-plane"></i> Kirim Pesan
+                            Sekarang
+                        </button>
+                    </form>
+
+                    <div
+                        id="contact-success-alert"
+                        class="hidden"
+                        style="
+                            margin-top: 1rem;
+                            padding: 1rem;
+                            background: rgba(0, 255, 102, 0.1);
+                            border: 1px solid var(--neon-green);
+                            border-radius: 10px;
+                            color: var(--light-neon);
+                            text-align: center;
+                        "
+                    >
+                        <strong>✓ Pesan Berhasil Terkirim!</strong>
+                        <p
+                            style="
+                                font-size: 0.75rem;
+                                margin-top: 0.25rem;
+                                color: white;
+                            "
+                        >
+                            Terima kasih, pesan Anda telah tersampaikan.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Modal CV -->
+        <div id="cv-modal" class="modal-overlay hidden">
+            <div class="modal-card">
+                <button onclick="closeModal('cv-modal')" class="modal-close">
+                    &times;
+                </button>
+                <h3 style="color: white; font-size: 1.2rem">
+                    Curriculum Vitae
+                </h3>
+                <div
+                    id="cv-modal-content"
+                    style="
+                        font-family: var(--font-mono);
+                        font-size: 0.8rem;
+                        background: var(--bg-dark);
+                        padding: 1rem;
+                        border-radius: 10px;
+                        border: 1px solid var(--border-color);
+                        color: var(--text-main);
+                        line-height: 1.6;
+                        max-height: 300px;
+                        overflow-y: auto;
+                    "
+                ></div>
+                <button
+                    onclick="closeModal('cv-modal')"
+                    class="btn-sm-neon"
+                    style="align-self: flex-end"
+                >
+                    Tutup
+                </button>
+            </div>
+        </div>
+
+        <!-- Modal Add Project -->
+        <div id="add-project-modal" class="modal-overlay hidden">
+            <div class="modal-card">
+                <button
+                    onclick="closeModal('add-project-modal')"
+                    class="modal-close"
+                >
+                    &times;
+                </button>
+                <h3 style="color: white">Tambah Project Baru</h3>
+                <form
+                    onsubmit="addNewProject(event)"
+                    style="display: flex; flex-direction: column; gap: 0.75rem"
+                >
+                    <input
+                        type="text"
+                        id="new-p-title"
+                        placeholder="Judul Project"
+                        required
+                    />
+                    <select id="new-p-category">
+                        <option value="Robotik & IoT">Robotik & IoT</option>
+                        <option value="Website & App">Website & App</option>
+                        <option value="otomasi">Praktek Titl</option>
+                    </select>
+
+                    <!-- TAMBAHAN BARU: Input teks untuk label bawah/teknologi -->
+                    <input
+                        type="text"
+                        id="new-p-tech"
+                        placeholder="Teknologi/Label Bawah (misal: Arduino Nano & Relay)"
+                        required
+                    />
+
+                    <input
+                        type="file"
+                        id="new-p-file"
+                        accept="image/*,video/*"
+                    />
+                    <textarea
+                        id="new-p-desc"
+                        placeholder="Deskripsi Singkat"
+                        rows="3"
+                        required
+                    ></textarea>
+                    <button
+                        type="submit"
+                        class="btn-primary"
+                        style="justify-content: center"
+                    >
+                        Simpan Project
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Unified Modal Project Detail -->
+        <div id="project-detail-modal" class="modal-overlay hidden">
+            <div class="modal-card">
+                <button
+                    onclick="closeModal('project-detail-modal')"
+                    class="modal-close"
+                >
+                    &times;
+                </button>
+                <div
+                    id="pd-modal-media-container"
+                    class="modal-media-box"
+                ></div>
+                <h3 id="pd-modal-title" style="color: white; font-size: 1.2rem">
+                    Judul Project
+                </h3>
+                <p
+                    id="pd-modal-desc"
+                    style="
+                        font-size: 0.85rem;
+                        color: var(--text-muted);
+                        line-height: 1.5;
+                    "
+                ></p>
+                <div
+                    style="
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        gap: 0.5rem;
+                    "
+                >
+                    <div id="pd-modal-web-btn-container"></div>
+                    <button
+                        onclick="closeModal('project-detail-modal')"
+                        class="btn-sm-neon"
+                    >
+                        Tutup
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div>
+                        <strong style="color: white">DAVIN • X TITL 3</strong>
+                        <p>
+                            Dibuat oleh Akhmad Davin Aditya Pratama &copy; 2026
+                        </p>
+                    </div>
+                    <div style="display: flex; gap: 1rem">
+                        <a
+                            href="#home"
+                            onclick="switchPage('home')"
+                            style="
+                                color: var(--neon-green);
+                                text-decoration: none;
+                            "
+                            >Utama</a
+                        >
+                        <a
+                            href="#biodata"
+                            onclick="switchPage('biodata')"
+                            style="
+                                color: var(--neon-green);
+                                text-decoration: none;
+                            "
+                            >Biodata</a
+                        >
+                        <a
+                            href="#project"
+                            onclick="switchPage('project')"
+                            style="
+                                color: var(--neon-green);
+                                text-decoration: none;
+                            "
+                            >Museum</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>
